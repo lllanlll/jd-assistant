@@ -965,7 +965,7 @@ class Assistant(object):
             return False
 
     @check_login
-    def submit_order_with_retry(self, retry=3, interval=4):
+    def submit_order_with_retry(self, retry=3, interval=3):
         """提交订单，并且带有重试功能
         :param retry: 重试次数
         :param interval: 重试间隔
@@ -986,7 +986,7 @@ class Assistant(object):
             return False
 
     @check_login
-    def submit_order_by_time(self, buy_time, retry=4, interval=5):
+    def submit_order_by_time(self, buy_time, retry=4, interval=3):
         """定时提交商品订单
 
         重要：该方法只适用于普通商品的提交订单，事先需要先将商品加入购物车并勾选✓。
@@ -1282,7 +1282,7 @@ class Assistant(object):
             return False
 
     @deprecated
-    def exec_seckill(self, sku_id, retry=4, interval=4, num=1, fast_mode=True):
+    def exec_seckill(self, sku_id, retry=4, interval=3, num=1, fast_mode=True):
         """立即抢购
 
         抢购商品的下单流程与普通商品不同，不支持加入购物车，可能需要提前预约，主要执行流程如下：
@@ -1314,7 +1314,7 @@ class Assistant(object):
             return False
 
     @deprecated
-    def exec_seckill_by_time(self, sku_ids, buy_time, retry=4, interval=4, num=1, fast_mode=True):
+    def exec_seckill_by_time(self, sku_ids, buy_time, retry=4, interval=3, num=1, fast_mode=True):
         """定时抢购
         :param sku_ids: 商品id，多个商品id用逗号进行分割，如"123,456,789"
         :param buy_time: 下单时间，例如：'2018-09-28 22:45:50.000'
@@ -1335,7 +1335,7 @@ class Assistant(object):
             self.exec_seckill(sku_id, retry, interval, num, fast_mode)
 
     @check_login
-    def exec_reserve_seckill_by_time(self, sku_id, buy_time, retry=4, interval=4, num=1):
+    def exec_reserve_seckill_by_time(self, sku_id, buy_time, retry=4, interval=3, num=1):
         """定时抢购`预约抢购商品`
 
         预约抢购商品特点：
