@@ -4,11 +4,11 @@ from datetime import datetime
 from timer import Timer
 from log import logger
 
-buy_time = "2021-03-25 19:57:00.000"
+buy_time = "2021-03-25 20:09:40.997"
 t = Timer(buy_time=buy_time)
 
 buy_time = datetime.strptime(buy_time, "%Y-%m-%d %H:%M:%S.%f")
-sleep_interval = 0.01
+sleep_interval = 0.001
 
 def start(self):
     logger.info('正在等待到达设定时间:%s' % self.buy_time)

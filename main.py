@@ -19,13 +19,13 @@ if __name__ == '__main__':
     10027264803895 3060ti 27 12:00
     100016914910 3060ti 29 11:00
     '''
-    sku_ids = ['10027096289578']  # 商品id
-    # sku_ids = ['100019084146', '10026477628123', '10026477628125', '10026477628127', '10026477628129', '10026477628131']
+    sku_ids = '10026920091878'  # 商品id
+    # sku_ids = ['100019176614', '100016578654', '100008550195', '100016046826', '100016672406']
     area = '1_2800_4209'  # 区域id
     asst = Assistant()  # 初始化
     asst.login_by_QRcode()  # 扫码登陆
-    for i in sku_ids:
-        asst.exec_reserve_seckill_by_time(sku_id=i, buy_time='2021-03-26 00:00:04.997')
+    # for i in sku_ids:
+    asst.exec_reserve_seckill_by_time(sku_id=sku_ids, buy_time='2021-03-27 12:00:00.000')
 
 
     # asst.buy_item_in_stock(sku_ids=sku_ids, area=area, wait_all=False, stock_interval=3)  # 根据商品是否有货自动下单
